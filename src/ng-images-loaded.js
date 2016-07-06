@@ -13,7 +13,8 @@
         return {
             restrict: 'EA',
             scope : {
-                ngModel : '=ngModel'
+                ngModel : '=ngModel',
+                progress : '='
             },
             require : 'ngModel',
             templateUrl: 'ng-img-loaded.progressbar.tpl.html',
@@ -27,20 +28,18 @@
                     return ngModel.$viewValue;
                 },
                 function(model){
-                    var els = angular.element.find('.ngimgloaded')[0].children;
-                    if (!model) {
+                    if (!model || model.length === 0 ) {
                         return;
                     }
-                    var count = 0;
                     var percent = Math.ceil(100/model.length);
                     model.map(function(val,i){
                         var image = new Image();
                         image.onload = function(){
-                            count++;
                             scope.progress += percent;
-                            if (scope.progress>100) {
+                            if (scope.progress>=100) {
                                 scope.progress = 0;
                             }
+                            console.info('scope.progress',scope.progress);
                         };
                         image.src = val.dataurl;
                     });
