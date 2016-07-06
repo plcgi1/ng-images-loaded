@@ -1,0 +1,29 @@
+{
+  "name": "ng-images-loaded",
+  "description": "Images loaded progress bar",
+  "main": "src/ng-images-loaded.js",
+  "keywords": [
+    "images",
+    "loading",
+    "bar"
+  ],
+  "authors": [
+    "plcgi1@gmail.com"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.0"
+  }
+}
