@@ -29,6 +29,7 @@
                 },
                 function(model){
                     if (!model || model.length === 0 ) {
+                        scope.progress = 0;
                         return;
                     }
                     var percent = Math.ceil(100/model.length);
@@ -41,7 +42,7 @@
                             }
                             console.info('scope.progress',scope.progress);
                         };
-                        image.src = val.dataurl;
+                        image.src = val.web_path;
                     });
                 });
             }
